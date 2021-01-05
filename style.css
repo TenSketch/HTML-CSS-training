@@ -1,0 +1,177 @@
+/* universal styles and selectors */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,700;1,400&display=swap");
+/* universal selectors */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* tag selectors */
+body {
+  overflow-x: hidden;
+  line-height: 1.3;
+  color: #424242;
+  /* word-spacing: 4px; */
+  letter-spacing: 1.5px;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #cecece;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #212121;
+}
+.logo {
+  font-size: 2rem;
+  color: #cecece;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+nav ul a {
+  color: #cecece;
+  font-size: 17px;
+}
+/* mobile menu icon */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: #cecece;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 1024px) {
+  nav ul {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    right: 0;
+    top: 8vh;
+    height: 92vh;
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-4px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-4px, -6px);
+}
+
+/* a {
+  color: rgb(92, 179, 255);
+  text-decoration: none;
+}
+a:hover {
+  color: #424242;
+} */
+
+
+hr {
+  border-style: none;
+  background-color: white;
+  height: 2px;
+  width: 30%;
+}
+
+/* class selectors */
+.container {
+  height: 50px;
+  width: 80%;
+  margin: 0 auto;
+}
+.title::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bgimage {
+  /* shorthand property */
+  background: url(/images/fruit.jpg) no-repeat fixed center;
+  /* doesn't come under shorthand property */
+  background-size: cover;
+}
+.overlay {
+  background-color: #16161671;
+  padding: 5rem 3rem;
+  height: 100vh;
+}
+.d-flex {
+  display: flex;
+  height: 100%;
+  /* padding: 0 5rem; */
+}
+/* vertically align items on the center of a parent element */
+.align-items-center {
+  align-items: center;
+}
+/* horizontally align items on the center of a parent element  */
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-space-around {
+  justify-content: space-around;
+}
+figure img {
+  height: 100px;
+  max-width: 100%;
+}
+figcaption {
+  text-align: center;
+}
+/* @media (max-width: 425px) {
+  .d-flex {
+    flex-direction: column;
+  }
+} */
+
+
+::selection{
+  background-color: aqua;
+  color: #212121;
+}

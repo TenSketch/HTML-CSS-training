@@ -1,0 +1,47 @@
+/* *, *::before, *::after{
+    box-sizing: border-box;
+} */
+
+body{
+    margin: 0;
+}
+
+section{
+    background-color: lightblue;
+    display: flex;
+    /* vertically align center */
+    align-items: center; 
+    
+    justify-content: space-around;
+    height: 100vh;
+    /* padding: 0 20rem; */
+}
+.bgimage{
+    /* shorthand property */
+    background: rgb(241, 250, 161) url(/images/fruit.jpg) no-repeat fixed center ;
+    /* doesn't come under shorthand property */
+    background-size: cover;
+    
+}
+.overlay{
+    background-color: rgba(202, 202, 202, 0.534);
+    padding: 5rem 3rem;
+}
+p{
+    font-size: 18.5px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+/* do these until the screen size is 600px maximum */
+@media(max-width:600px){
+    section{
+        flex-direction: column;
+        height: 100%;
+    }
+}
+

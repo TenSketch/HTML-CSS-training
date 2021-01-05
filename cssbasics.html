@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resposnsive flexbox codepen using flex-wrap and flex properties. Easy responsive flexbox without using media queries.">
+    <meta name="keywords" content="flexbox, flex, responsive flexbox, responsive flexbox without using media query, flex-wrap, flex">
+
+    <title>CSS basics</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- internal -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* defining CSS variables */
+        :root {
+            --zero: 0;
+            --x5: 0 5%;
+            --x10: 0 10%;
+            --y5: 5% 0;
+            --y10: 10% 0;
+            --xy25: 2.5% 5% 5%;
+            --five: 5%;
+            --ten: 10%;
+            --tworem: 2rem;
+            --vh-100: 100vh;
+            --h-100: 100%;
+            --h-300: 300px;
+            --bg-primary: turquoise;
+            --bg-secondary: teal;
+            --bg-light: rgb(190, 255, 255);
+            --bg-dark: rgb(0, 61, 61);
+            --color-light: #fff;
+            --color-dark: #424242;
+            --center: center;
+            --text-justify: justify;
+            --flex: flex;
+            --SA: space-around;
+            --SB: space-between;
+            --flex-row: row;
+            --flex-column: column
+        }
+
+        body {
+            /* var keyword is used to called globally defined CSS variables */
+            margin: var(--zero);
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text-center {
+            text-align: var(--center);
+        }
+
+        #float,
+        #flexbox,
+        #media {
+            height: var(--vh-100);
+            padding: var(--xy25);
+            text-align: var(--text-justify);
+        }
+
+        #float {
+            background-color: var(--bg-primary);
+            height: var(--h-100);
+        }
+
+        #float img {
+            float: right;
+            margin-left: var(--tworem);
+            height: var(--h-300);
+        }
+
+
+        #flexbox {
+            background-color: var(--bg-light);
+        }
+
+        .d-flex {
+            height: var(--h-100);
+            display: var(--flex);
+            align-items: var(--center);
+            justify-content: var(--SA);
+        }
+
+        .d-flex img {
+            height: var(--h-300);
+        }
+
+        .d-flex div {
+            width: 500px;
+            background-color: var(--bg-dark);
+            padding: 1rem;
+            color: var(--color-light);
+        }
+
+        .h1-big {
+            font-size: var(--tworem);
+            text-align: var(--center);
+            /* margin: var(--zero); */
+            padding-top: 1rem;
+        }
+
+        #media {
+            display: var(--flex);
+
+            /* color: var(--color-light); */
+            height: var(--vh-100);
+            align-items: var(--center);
+            justify-content: var(--SA);
+
+        }
+
+        .mega-h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        @media(max-width: 576px) {
+            img {
+                height: auto !important;
+                float: none;
+                /* margin-left: 0; */
+            }
+
+            #float h2 {
+                padding-top: 2rem;
+                margin-top: 16rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+            }
+
+            #float {
+                height: 100%;
+            }
+
+            .h1-big {
+                font-size: 1.5rem;
+                /* padding-bottom: 1rem; */
+            }
+
+            .d-flex img {
+                margin-top: 2rem;
+            }
+
+            .d-flex div {
+                width: 100%;
+                margin-top: 1rem;
+
+            }
+
+            #flexbox,
+            .d-flex,
+            #media {
+                flex-direction: column;
+                height: 100%;
+                padding-bottom: 1rem;
+            }
+
+            #media img {
+                margin-top: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="float">
+        <h1 class="h1-big">Float layout</h1>
+        <img src="images/front-end_developer.jpg" alt="front-end_developer">
+        <h2>front-end_developer</h2>
+        <p>Ipsum cupidatat consequat deserunt nostrud proident ad aliqua enim. Tempor sit veniam occaecat reprehenderit
+            sint velit minim cupidatat irure ullamco laborum. Esse ipsum reprehenderit mollit consectetur reprehenderit
+            elit laborum tempor aliqua occaecat in. Minim cillum ea quis fugiat culpa anim fugiat ad voluptate ullamco
+            dolore. Qui Lorem laboris culpa aliqua veniam. Tempor mollit commodo aute nisi. Aute amet exercitation
+            occaecat ipsum sunt eiusmod proident aliqua labore enim eu.
+            Nulla aute id laboris aliquip tempor anim nostrud. Deserunt id ut duis adipisicing anim labore enim ad
+            mollit officia. Aute dolore deserunt do officia eiusmod id eu irure culpa mollit sint. Sint dolore officia
+            commodo adipisicing consequat. Nisi magna elit aute duis minim id irure tempor nisi.
+            Do sit anim ex aliqua exercitation eu. Dolore ut consequat aliqua ad dolor consectetur culpa. Aliquip fugiat
+            fugiat minim irure voluptate consequat consequat in elit non magna sunt occaecat. Cillum ad irure culpa
+            commodo ipsum id ex voluptate amet. Fugiat anim quis Lorem tempor ad.
+            Labore excepteur laboris amet pariatur sit pariatur consequat dolore. Irure Lorem pariatur incididunt irure
+            culpa officia fugiat. Laborum commodo Lorem veniam incididunt quis culpa. Sit aliquip et velit ut incididunt
+            aute tempor in fugiat amet mollit. Ullamco veniam eu nostrud quis dolore ad officia aliqua cillum pariatur.
+            Proident culpa dolor do sit magna aliquip esse aliqua adipisicing qui deserunt sunt. Aliquip non consequat
+            laborum tempor ea cupidatat esse labore do do. Anim officia aliqua aute nisi. Cupidatat tempor commodo do
+            magna sit qui aliquip adipisicing laborum voluptate laborum anim. Sint fugiat minim laborum anim fugiat eu.
+            Et reprehenderit excepteur excepteur exercitation elit adipisicing esse laboris. Sint adipisicing fugiat et
+            proident id in.
+            Ea aute veniam magna sint. Elit aute cillum do magna irure Lorem ipsum esse magna cillum enim pariatur non.
+            Ipsum labore irure mollit deserunt cillum aliqua voluptate amet. Tempor minim consectetur pariatur quis eu
+            anim quis nisi proident consequat culpa aliqua eiusmod. Eu cupidatat aute ullamco qui ullamco do anim
+            voluptate tempor minim.</p>
+    </section>
+    <section id="flexbox">
+        <h1 class="h1-big">Flexbox layout</h1>
+        <!-- parent div  is the flexbox or flex container-->
+        <div class="d-flex">
+            <!-- 1st child img -flex items -->
+            <img src="images/business-analyst.jpg" alt="">
+            <!-- 2nd child div- flex items -->
+            <div>
+                <h2>heading</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In recusandae laudantium quaerat ea
+                    consectetur
+                    nostrum. Dolore aut consequuntur rerum! In cumque cum voluptatum fugiat iusto debitis culpa
+                    architecto
+                    ducimus repudiandae.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In recusandae laudantium quaerat ea
+                    consectetur
+                    nostrum. Dolore aut consequuntur rerum! In cumque cum voluptatum fugiat iusto debitis culpa
+                    architecto
+                    ducimus repudiandae.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="media">
+        <div><img src="images/front-end_developer.jpg" alt=""></div>
+        <h1 class="mega-h1">Front-end</h1>
+    </section>
+
+    
+</body>
+
+</html>

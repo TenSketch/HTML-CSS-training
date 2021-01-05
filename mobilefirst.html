@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile 📱 First</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* defining CSS variables */
+        :root {
+            --zero: 0;
+            --x5: 0 5%;
+            --x10: 0 10%;
+            --y5: 5% 0;
+            --y10: 10% 0;
+            --xy25: 2.5% 5% 5%;
+            --five: 5%;
+            --ten: 10%;
+            --tworem: 2rem;
+            --vh-100: 100vh;
+            --h-100: 100%;
+            --h-300: 300px;
+            --bg-primary: turquoise;
+            --bg-secondary: teal;
+            --bg-light: rgb(190, 255, 255);
+            --bg-dark: rgb(0, 61, 61);
+            --color-light: rgb(240, 240, 240);
+            --color-dark: #424242;
+            --center: center;
+            --text-justify: justify;
+            --flex: flex;
+            --SA: space-around;
+            --SB: space-between;
+            --flex-row: row;
+            --flex-column: column
+        }
+
+        body {
+            /* var keyword is used to called globally defined CSS variables */
+            margin: var(--zero);
+
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        #flexbox {
+            background-color: var(--bg-secondary);
+            padding: var(--five);
+            color: var(--color-light);
+            text-align: var(--text-justify);
+        }
+
+        .d-flex {
+            display: var(--flex);
+            flex-direction: var(--flex-column);
+        }
+        @media(min-width: 769px) {
+            #flexbox {
+                /* padding: var(--zero); */
+                height: 100vh;
+            }
+            #flexbox h1{
+                margin-top: 0;
+                /* padding-top: var(--tworem); */
+            }
+            .d-flex {
+                flex-direction: var(--flex-row);
+                justify-content: var(--SA);
+                align-items: var(--center);
+                height: var(--h-100);
+            }
+
+            .d-flex img {
+                /* height: 300px; */
+            }
+
+            .d-flex div {
+                width: 400px;
+                margin-left: 2rem;
+            }
+        }
+       @media (max-width: 1024px) and (min-width: 769px){
+        .d-flex img {
+                height: 300px;
+            }
+
+            .d-flex div {
+                width: 100%;
+                /* margin-left: 2rem; */
+            }
+       }
+    </style>
+</head>
+
+<body>
+
+    <section id="flexbox">
+        <h1 style="text-align: var(--center);">Flexbox layout</h1>
+        <!-- parent div  is the flexbox or flex container-->
+        <div class="d-flex">
+            <!-- 1st child img -flex items -->
+            <img src="images/business-analyst.jpg" alt="">
+            <!-- 2nd child div- flex items -->
+            <div>
+                <h2>heading</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In recusandae laudantium quaerat ea
+                    consectetur
+                    nostrum. Dolore aut consequuntur rerum! In cumque cum voluptatum fugiat iusto debitis culpa
+                    architecto
+                    ducimus repudiandae.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In recusandae laudantium quaerat ea
+                    consectetur
+                    nostrum. Dolore aut consequuntur rerum! In cumque cum voluptatum fugiat iusto debitis culpa
+                    architecto
+                    ducimus repudiandae.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

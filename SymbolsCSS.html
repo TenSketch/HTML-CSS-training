@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbols-CSS</title>
+    <style>
+        :root {
+            --bg-primary: #df1e35;
+            --bg-secondary: #e96777;
+            --color-light: #fadde0;
+            --color-dark: #303a39;
+            --rose-red: #c62e65;
+        }
+
+        .container {
+            width: min(90%, 70vw);
+            margin: 0 auto;
+        }
+
+        article:nth-last-of-type(even) {
+            background-color: lightgreen;
+        }
+
+        code {
+            display: block;
+            background-color: lightgray;
+            padding: 1rem;
+            width: fit-content;
+        }
+
+        span {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--rose-red);
+        }
+
+        /* Space: */
+        #_space p {
+            font-weight: bold;
+        }
+        #_space .second {
+            font-size: 20px;
+            background-color: lightpink;
+        }
+
+        /* > Sign: */
+        #GreaterThansign>p {
+            border: 1px solid;
+        }
+
+        /* + Sign works only within div */
+        #PlusSign div+p {
+            color: blue;
+        }
+
+        /* ~ ApproximatelySign */
+        #ApproximatelySign div~p {
+            background-color: var(--rose-red);
+            color: var(--color-light);
+            padding: 1rem;
+            width: 50%
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <article>
+            <div id="_space">
+                <h3><span>Space: </span> It is the descendant selector. It will target all p tags within container div.
+                </h3>
+                <div class="flex">
+                    <code>/* Space: */<br>
+                        #container_space p<br> {<br>
+                            font-weight: bold;<br>
+                        }</code>
+                </div>
+                <p>First</p>
+                <div>
+                    <p>Child Paragraph</p>
+                </div>
+                <p class="second">Second</p>
+                <p>Third</p>
+            </div>
+        </article>
+        <hr noshade>
+        <article>
+            <div id="GreaterThansign">
+                <h3><span>> Sign: </span>It will target elements which are DIRECT children of a particular element.</h3>
+                <div class="flex">
+                    <code>/* > Sign: */<br>
+                        #GreaterThansign > p<br>{<br>
+                            border: 1px solid;<br>
+                        }</code>
+                </div>
+                <p>First</p>
+                <div>
+                    <p>Child Paragraph</p>
+                </div>
+                <p>Second</p>
+                <p>Third</p>
+            </div>
+        </article>
+        <hr noshade>
+        <article>
+            <div id="PlusSign">
+                <h3><span>+ Sign: </span>It is Adjacent sibling combinator. It combines two sequences of simple
+                    selectors
+                    having the same parent and the second one must come IMMEDIATELY after the first.</h3>
+                <code>/* + Sign works only within div */<br>
+                    #PlusSign div + p<br>{<br>
+                        color: blue;<br>
+                    }</code>
+                <p>First</p>
+                <div>
+                    <p>Child Paragraph</p>
+                </div>
+                <p>Second</p>
+                <p>Third</p>
+            </div>
+        </article>
+        <hr noshade>
+        <article>
+            <div id="ApproximatelySign">
+                <h3><span>~ Sign: </span>It is general sibling combinator and similar to Adjacent sibling combinator.
+                    the
+                    difference is that the second selector does NOT have to immediately follow the first one means It
+                    will
+                    select all elements that is preceded by the former selector. It will target both second and third.
+                </h3>
+                <code>/* ~ ApproximatelySign */<br>
+                    #ApproximatelySign div ~ p<br>{<br>
+                        background-color: var(--rose-red);<br>
+                        color: var(--color-light);<br>
+                        padding: 1rem;<br>
+                        width: 50%;<br>
+                    }</code>
+                <p>First</p>
+                <div>
+                    <p>Child Paragraph</p>
+                </div>
+                <p>Second</p>
+                <p>Third</p>
+            </div>
+        </article>
+    </div>
+</body>
+
+</html>

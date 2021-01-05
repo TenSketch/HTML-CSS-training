@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    /* overflow-x: hidden; */
+    background-color:aquamarine;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+.container{
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+.flex-container{
+    
+    background-color: thistle;
+    padding: 3em;
+    /* height: 30vh; */
+    display: flex;
+    
+    /* default */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* main (X) axis - justify-content property */
+    justify-content: flex-start;
+    /* cross (Y) axis - align-items property */
+	align-items: stretch;
+    /* default */
+    
+    /* change css below */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    /* shorthand for flex-direction and flex-wrap */
+    /* flex-flow: row wrap; */
+    justify-content:space-around;
+    /* align-items: center;    */
+    /* gap: 1em; */
+
+}
+
+.flex-item{
+    
+    background-color: teal;
+    color: thistle;
+    flex-basis: 25em;
+    flex-shrink: 0;
+    flex-grow: 1;
+    /* shorthand property for flex-grow, shrink and flex-basis */
+    /* grow shrink flex-basix */
+    flex: 0 1 25em;
+    /* padding: 1em; */
+    border: 1px solid #fff;
+}
+.one{
+    /* flex: 10em; */
+    /* font-size: 2em; */
+}
+
+.four{
+    /* font-size: 3em; */
+}
+.two{
+    font-size: 3em;
+}
+.columns{
+    columns: 4;
+}
+
+/* if you want flex-basis to remain 100% (equal width of items), use media query for desktop to place items adjacent to each other */
+@media(min-width:768px){
+.flex-container{
+    /* flex-wrap: nowrap; */
+    /* gap: 1em; */
+    /* flex-direction: row; */
+}
+.flex-item{
+    /* flex: 1 1 100%; */
+}
+}
